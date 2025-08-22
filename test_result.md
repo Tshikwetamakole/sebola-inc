@@ -152,15 +152,18 @@ frontend:
 
   - task: "About page functionality"
     implemented: true
-    working: "NA"
+    working: false
     file: "/app/frontend/src/components/AboutPage.jsx"
-    stuck_count: 0
+    stuck_count: 1
     priority: "medium"
     needs_retesting: true
     status_history:
         -working: "NA"
         -agent: "testing"
         -comment: "Testing required for about page content, stats, mission & values sections"
+        -working: false
+        -agent: "testing"
+        -comment: "❌ About page navigation blocked by JavaScript error overlay. About section is visible on homepage when scrolled to, but direct navigation to /about page cannot be tested due to navigation error preventing clicks. About content appears properly implemented based on homepage section visibility."
 
   - task: "Contact page and form functionality"
     implemented: true
