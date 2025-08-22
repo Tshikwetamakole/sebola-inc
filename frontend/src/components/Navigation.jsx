@@ -28,7 +28,7 @@ const Navigation = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       const offset = 100;
-      const elementPosition = element.getBoundingClientTop() + window.pageYOffset;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
         top: elementPosition - offset,
         behavior: "smooth"
