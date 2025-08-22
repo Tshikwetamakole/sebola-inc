@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { Menu, Phone, Mail } from "lucide-react";
+import { Menu, Phone, Mail, Scale, Sparkles } from "lucide-react";
 import { mockData } from "../mock";
 
 const Navigation = () => {
