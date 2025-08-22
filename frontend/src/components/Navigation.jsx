@@ -42,23 +42,26 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200" 
+        ? "bg-white/95 backdrop-blur-xl shadow-2xl border-b border-gray-200/50" 
         : "bg-white/80 backdrop-blur-sm"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-r from-slate-700 to-slate-900 rounded-lg flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform duration-200">
-              PS
+            <div className="relative">
+              <div className="w-12 h-12 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl">
+                <Scale className="w-6 h-6" />
+              </div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full animate-pulse"></div>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors duration-200">
+              <h1 className="text-xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent group-hover:from-amber-600 group-hover:to-amber-500 transition-all duration-300">
                 Phillip Sebola Inc.
               </h1>
-              <p className="text-sm text-slate-600">Attorneys & Conveyancers</p>
+              <p className="text-sm text-slate-600 font-medium">Attorneys & Conveyancers</p>
             </div>
           </Link>
 
@@ -66,33 +69,38 @@ const Navigation = () => {
           <div className="hidden lg:flex items-center space-x-8">
             <Link 
               to="/" 
-              className="text-slate-700 hover:text-amber-600 font-medium transition-colors duration-200"
+              className="relative text-slate-700 hover:text-amber-600 font-medium transition-all duration-300 py-2 px-1 group"
             >
               Home
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-amber-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
             <button 
               onClick={() => scrollToSection("about")}
-              className="text-slate-700 hover:text-amber-600 font-medium transition-colors duration-200"
+              className="relative text-slate-700 hover:text-amber-600 font-medium transition-all duration-300 py-2 px-1 group"
             >
               About
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-amber-600 group-hover:w-full transition-all duration-300"></span>
             </button>
             <button 
               onClick={() => scrollToSection("services")}
-              className="text-slate-700 hover:text-amber-600 font-medium transition-colors duration-200"
+              className="relative text-slate-700 hover:text-amber-600 font-medium transition-all duration-300 py-2 px-1 group"
             >
               Services
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-amber-600 group-hover:w-full transition-all duration-300"></span>
             </button>
             <button 
               onClick={() => scrollToSection("testimonials")}
-              className="text-slate-700 hover:text-amber-600 font-medium transition-colors duration-200"
+              className="relative text-slate-700 hover:text-amber-600 font-medium transition-all duration-300 py-2 px-1 group"
             >
               Testimonials
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-amber-600 group-hover:w-full transition-all duration-300"></span>
             </button>
             <Link 
               to="/contact" 
-              className="text-slate-700 hover:text-amber-600 font-medium transition-colors duration-200"
+              className="relative text-slate-700 hover:text-amber-600 font-medium transition-all duration-300 py-2 px-1 group"
             >
               Contact
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-amber-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
           </div>
 
@@ -100,17 +108,18 @@ const Navigation = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <a 
               href={`mailto:${mockData.contact.email}`}
-              className="flex items-center space-x-2 text-slate-600 hover:text-amber-600 transition-colors duration-200"
+              className="flex items-center space-x-2 text-slate-600 hover:text-amber-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-amber-50 group"
             >
-              <Mail className="w-4 h-4" />
-              <span className="text-sm">Email Us</span>
+              <Mail className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+              <span className="text-sm font-medium">Email Us</span>
             </a>
             <Button 
               onClick={handleContactClick}
-              className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-lg transition-all duration-200 flex items-center space-x-2 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-6 py-2 rounded-xl transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl hover:scale-105 transform font-medium"
             >
               <Phone className="w-4 h-4" />
               <span>Call Now</span>
+              <Sparkles className="w-3 h-3 animate-pulse" />
             </Button>
           </div>
 
